@@ -40,4 +40,9 @@ public class bullet_controller : MonoBehaviour
     {
 
     }
+
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
 }

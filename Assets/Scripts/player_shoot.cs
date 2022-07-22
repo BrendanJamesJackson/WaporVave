@@ -4,23 +4,26 @@ using UnityEngine;
 
 public class player_shoot : MonoBehaviour
 {
-    public int bulletCount;
     public GameObject projectile;
     public Transform gunPos;
+    public float cooldown = 0.5f;
+    private float timer;
     
     // Start is called before the first frame update
     void Start()
     {
-        bulletCount = 20;
+        timer = cooldown;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetButtonDown("Fire")) && (bulletCount > 0))
+        timer -= Time.deltaTime;
+
+        if ((Input.GetButtonDown("Fire")) && (timer <= 0))
         {
             Instantiate(projectile, gunPos.position, gunPos.rotation);
-            bulletCount--;
+            timer = cooldown;
         }
     }
 }

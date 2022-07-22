@@ -12,6 +12,8 @@ public class player_controller : MonoBehaviour
 
     public LayerMask groundLayer;
 
+    private game_controller gc; //game controller script - end game, change score, etc.
+
     private void Update()
     {
         player_isgrounded = isGrounded();
@@ -38,5 +40,13 @@ public class player_controller : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            gc.gameOver();
+        }
     }
 }

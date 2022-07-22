@@ -4,13 +4,34 @@ using UnityEngine;
 
 public class game_controller : MonoBehaviour
 {
+    public float speedmodifier;
+
     private int score;
     public GameObject endOverlay;
+
+    protected float Timer;
     
     // Start is called before the first frame update
     void Start()
     {
         score = 0;
+        speedmodifier = 1;
+    }
+
+    public float getSpeedModifier()
+    {
+        return speedmodifier;
+    }
+
+    private void Update()
+    {
+        Timer += Time.deltaTime;
+
+        if (Timer >= 10f)
+        {
+            Timer = 0f;
+            speedmodifier += 0.1f;
+        }
     }
 
     public int getScore()

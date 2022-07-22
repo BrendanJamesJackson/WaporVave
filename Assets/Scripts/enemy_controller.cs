@@ -6,6 +6,7 @@ public class enemy_controller : MonoBehaviour
 {
     public int points;
     private game_controller gc;
+    private int type;
     
     // Start is called before the first frame update
     void Start()

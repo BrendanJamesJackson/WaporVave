@@ -19,15 +19,6 @@ public class bullet_controller : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {    
-        if (collision.gameObject.tag == "Enemy")
-        {
-            enemyShot();
-        }
-        else if (collision.gameObject.tag == "Decoy")
-        {
-            decoyShot();
-        }
-
         Destroy(gameObject);
     }
 

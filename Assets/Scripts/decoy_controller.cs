@@ -7,17 +7,18 @@ public class decoy_controller : MonoBehaviour
     public int numPops = 5;
     public GameObject[] popArr;
     public GameObject container;
+    public float speed = 5f;
+    private Rigidbody2D decoy_rb;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        decoy_rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        
+        decoy_rb.velocity = new Vector2(-speed, 0f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

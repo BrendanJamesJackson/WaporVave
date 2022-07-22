@@ -31,16 +31,6 @@ public class bullet_controller : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void enemyShot()
-    {
-        
-    }
-
-    void decoyShot()
-    {
-
-    }
-
     private void OnBecameInvisible()
     {
         Destroy(gameObject);

@@ -13,6 +13,7 @@ TagManager:
   - para4
   - para5
   - ParaOut
+  - Decoy
   layers:
   - Default
   - TransparentFX

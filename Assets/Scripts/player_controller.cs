@@ -14,6 +14,12 @@ public class player_controller : MonoBehaviour
 
     private game_controller gc; //game controller script - end game, change score, etc.
 
+    private void Start()
+    {
+        gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<game_controller>();
+
+    }
+
     private void Update()
     {
         player_isgrounded = isGrounded();

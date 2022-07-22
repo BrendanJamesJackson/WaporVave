@@ -49,5 +49,6 @@ public class game_controller : MonoBehaviour
         //game over sequence - Dan
         //play some sound
         endOverlay.SetActive(true);
+        speedmodifier = 0f;
     }
 }

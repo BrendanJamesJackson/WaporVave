@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemy_controller : MonoBehaviour
+public class decoy_controller : MonoBehaviour
 {
-    public int points;
-    private game_controller gc;
-    private int type;
+    public int numPops = 5;
+    public GameObject[] popArr;
+    public GameObject container;
     
     // Start is called before the first frame update
     void Start()
@@ -24,15 +24,7 @@ public class enemy_controller : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet")
         {
-            enemyDie();
+            //pop-up window, randomly choose from array
         }
-    }
-
-    public void enemyDie()
-    {
-        gc.incScore(points);
-        //particle effect
-        //sound
-        Destroy(gameObject);
     }
 }

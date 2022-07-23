@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class game_controller : MonoBehaviour
 {
@@ -60,5 +61,6 @@ public class game_controller : MonoBehaviour
         lb_controller.SubmitScore(score);
         endOverlay.SetActive(true);
         speedmodifier = 0f;
+        SceneManager.LoadScene(2);
     }
 }

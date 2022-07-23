@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/CreditsScene.unity
+    guid: 75135887a6b296440a767cb961fdc000
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 8bfe4e32bac879a40b86ca74cb09f790
+  - enabled: 1
+    path: Assets/Scenes/TaliahScene.unity
+    guid: 1fd1654fd6f471442af41f3dffaa073a
   m_configObjects: {}

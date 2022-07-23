@@ -38,9 +38,9 @@ public class leaderboard_controller : MonoBehaviour
         yield return new WaitWhile(() => done == false);
     }
 
-    public void SubmitScore()
+    public void SubmitScore(int score)
     {
-        LootLockerSDKManager.SubmitScore(PlayerPrefs.GetString("PlayerID"), int.Parse(player_score.text), ID, (response) =>
+        LootLockerSDKManager.SubmitScore(PlayerPrefs.GetString("PlayerID"), score, ID, (response) =>
         {
             if (response.success)
             {
@@ -57,7 +57,7 @@ public class leaderboard_controller : MonoBehaviour
 
     public void SetPlayerName()
     {
-        LootLockerSDKManager.SetPlayerName(player_name.text, (response) => 
+        LootLockerSDKManager.SetPlayerName(PlayerPrefs.GetString("PlayerName"), (response) => 
         {
             Debug.Log("Set player name");
         });

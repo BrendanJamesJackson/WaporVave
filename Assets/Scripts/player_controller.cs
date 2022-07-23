@@ -9,6 +9,7 @@ public class player_controller : MonoBehaviour
 
     public bool player_isgrounded;
 
+    public Animator animting;
 
     public LayerMask groundLayer;
 
@@ -23,6 +24,7 @@ public class player_controller : MonoBehaviour
     private void Update()
     {
         player_isgrounded = isGrounded();
+        animting.SetBool("ground", player_isgrounded);
     }
 
     void FixedUpdate()
@@ -37,9 +39,9 @@ public class player_controller : MonoBehaviour
     {
         Vector2 position = transform.position;
         Vector2 direction = Vector2.down;
-        float distance = 0.6f;
+        float distance = .9f;
 
-        Debug.DrawRay(position, direction*0.6f, Color.green);
+        Debug.DrawRay(position, direction*.9f, Color.green);
         RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
         if (hit.collider != null)
         {

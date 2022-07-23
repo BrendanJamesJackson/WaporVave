@@ -19,7 +19,7 @@ public class enemy_controller : MonoBehaviour
 
     private void FixedUpdate()
     {
-        enemy_rb.velocity = new Vector2(-speed, 0f);
+        //enemy_rb.velocity = new Vector2(-speed, 0f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

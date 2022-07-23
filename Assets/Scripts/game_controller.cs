@@ -10,7 +10,9 @@ public class game_controller : MonoBehaviour
     public GameObject endOverlay;
 
     protected float Timer;
-    
+
+    public leaderboard_controller lb_controller;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,7 @@ public class game_controller : MonoBehaviour
         if (Timer >= 10f)
         {
             Timer = 0f;
+            incScore(5);
             speedmodifier += 0.1f;
         }
     }
@@ -42,12 +45,14 @@ public class game_controller : MonoBehaviour
     public void incScore(int points)
     {
         score += points;
+        Debug.Log(score);
     }
 
     public void gameOver()
     {
         //game over sequence - Dan
         //play some sound
+        lb_controller.SubmitScore(score);
         endOverlay.SetActive(true);
         speedmodifier = 0f;
     }

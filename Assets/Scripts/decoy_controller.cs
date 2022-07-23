@@ -9,6 +9,10 @@ public class decoy_controller : MonoBehaviour
     public GameObject container;
     public float speed = 5f;
     private Rigidbody2D decoy_rb;
+
+    private Material material;
+    private float fade = 1f;
+    private bool isDissolving = false;
     
     // Start is called before the first frame update
     void Start()
@@ -26,6 +30,25 @@ public class decoy_controller : MonoBehaviour
         if (collision.gameObject.tag == "Bullet")
         {
             //pop-up window, randomly choose from array
+            isDissolving = true;
+            Fade();
+        }
+    }
+
+    private void Fade()
+    {
+        if (isDissolving)
+        {
+            fade -= Time.deltaTime;
+
+            if (fade <= 0f)
+            {
+                fade = 0f;
+                isDissolving = false;
+            }
+
+            // Set the property
+            material.SetFloat("_Fade", fade);
         }
     }
 }

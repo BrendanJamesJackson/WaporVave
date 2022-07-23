@@ -9,12 +9,14 @@ public class enemy_controller : MonoBehaviour
     private int type;
     public float speed = 5f;
     private Rigidbody2D enemy_rb;
+    private AudioSource sound;
     
     // Start is called before the first frame update
     void Start()
     {
         enemy_rb = gameObject.GetComponent<Rigidbody2D>();
         gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<game_controller>();
+        sound = gameObject.GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -34,7 +36,7 @@ public class enemy_controller : MonoBehaviour
     {
         gc.incScore(points);
         //particle effect
-        //sound
+        sound.Play();
         Destroy(gameObject);
     }
 }

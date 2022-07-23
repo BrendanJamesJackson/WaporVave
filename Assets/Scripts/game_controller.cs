@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class game_controller : MonoBehaviour
 {
@@ -12,6 +14,8 @@ public class game_controller : MonoBehaviour
     protected float Timer;
 
     public leaderboard_controller lb_controller;
+
+    public TextMeshProUGUI scoretext;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +50,7 @@ public class game_controller : MonoBehaviour
     {
         score += points;
         Debug.Log(score);
+        scoretext.text = "SCORE: " + score;
     }
 
     public void gameOver()
